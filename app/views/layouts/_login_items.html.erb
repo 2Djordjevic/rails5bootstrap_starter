@@ -1,0 +1,31 @@
+<% if user_signed_in? %>
+  <li>
+  <%= link_to('Edit Profile'.html_safe, edit_user_registration_path) %>
+  </li>
+<% else %>
+  <li>
+  <%= link_to(new_user_registration_path, :class => '') do %>
+	  <span class="glyphicon glyphicon-user"></span> Sign Up
+  <% end %>
+  </li>
+<% end %>
+
+<% if user_signed_in? %>
+  <li>
+  <%= link_to('Logout'.html_safe, destroy_user_session_path, method: :delete) %>
+  </li>
+<% else %>
+  <li>
+
+  <%= link_to(new_user_session_path, :class => '') do %>
+	  <span class="glyphicon glyphicon-log-in"></span> Login
+  <% end %>
+
+  </li>
+<% end %>
+
+
+
+
+
+
